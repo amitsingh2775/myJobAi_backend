@@ -30,4 +30,3 @@ app.listen(PORT, async () => {
   console.log(`Server Started at http://localhost:${PORT}`);
   await ConnectDB();
 });
-module.exports = app;
