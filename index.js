@@ -5,28 +5,34 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
 import productRoutes from "./routes/prodcutRoutes.js";
 import cors from "cors";
-// import https from "https";
-// import fs from "fs";
 
 dotenv.config();
+
 const app = express();
 
 app.use(express.json());
+
 app.use(cors({
-  origin: 'https://products-eight-dun.vercel.app',
+  origin: 'https://products-eight-dun.vercel.app', // Your frontend domain
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 app.use(cookieParser());
+
 app.use("/api/auth", authRoutes);
-app.use("/api", productRoutes); 
+app.use("/api", productRoutes);
 
-const PORT = process.env.PORT || 5000;
+// 🟢 Connect DB and export app
+await ConnectDB();
 
+// // 🔁 Optional: run locally with app.listen()
+// if (process.env.NODE_ENV !== 'production') {
+//   const PORT = process.env.PORT || 5000;
+//   app.listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
+//   });
+// }
 
-
-app.listen(PORT, async () => {
-  console.log(`Server Started at http://localhost:${PORT}`);
-  await ConnectDB();
-});
+export default app;
