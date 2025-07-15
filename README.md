@@ -10,8 +10,7 @@ It is deployed on **Vercel** as a serverless API for production use.
 
 ### 🔗 Live Backend URL
 
-> https://your-backend.vercel.app  
-(Replace with your actual Vercel backend URL)
+> https://my-job-ai-backend.vercel.app/
 
 ---
 
@@ -81,8 +80,8 @@ Product Routes:
 ### 📥 Installation
 
 ```bash
-git clone https://github.com/your-username/your-backend-repo.git
-cd your-backend-repo
+https://github.com/amitsingh2775/myJobAi_backend.git
+cd myJobAi_backend
 ```
 
 Install dependencies:
