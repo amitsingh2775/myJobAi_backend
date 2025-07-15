@@ -70,6 +70,7 @@ export const verifyOTP=async(req,res)=>{
              httpOnly: true,
            sameSite: 'Lax',
            secure: false, 
+           path: '/',
             maxAge: 7 * 24 * 60 * 60 * 1000
         }
      )
@@ -105,6 +106,7 @@ export const login=async(req,res)=>{
              httpOnly: true,
            sameSite: 'Lax',
            secure: false,
+           path: '/',
             maxAge: 7 * 24 * 60 * 60 * 1000
         }
      )
